@@ -1,0 +1,43 @@
+h1 {
+  margin: auto;
+  text-align: center;
+}
+
+main {
+  background: black;
+  height: 50vh;
+  width: 30vh;
+  margin: auto;
+}
+main .buttons-container {
+  display: flex;
+  justify-content: center;
+}
+main .monitor {
+  font-size: 3rem;
+  color: white;
+  text-align: right;
+  padding: 2rem;
+}
+main .number-container {
+  display: grid;
+  grid-template-columns: [sidebar] 1fr [content] 1fr [navbar] 1fr;
+}
+main .operators-container {
+  display: grid;
+}
+main .operators-container button {
+  background-color: orange;
+}
+
+button {
+  border: none;
+  width: 4.3rem;
+  height: 4.3rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 1rem;
+  margin: 0.1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
