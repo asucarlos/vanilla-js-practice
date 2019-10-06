@@ -1,0 +1,46 @@
+h1 {
+  margin: auto;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  background: black;
+  height: 50vh;
+  width: 30vh;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+  }
+  .monitor {
+    font-size: 3rem;
+    color: white;
+    text-align: right;
+    padding: 2rem;
+  }
+
+  .number-container {
+    display: grid;
+    grid-template-columns: [sidebar] 1fr [content] 1fr [navbar] 1fr;
+  }
+
+  .operators-container {
+    display: grid;
+    button {
+      background-color: orange;
+    }
+  }
+}
+
+button {
+  border: none;
+  width: 4.3rem;
+  height: 4.3rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 1rem;
+  margin: 0.1rem;
+}
