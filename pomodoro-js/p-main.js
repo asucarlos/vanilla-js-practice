@@ -1,5 +1,11 @@
 let countdown;
+let secondsLeft;
+let savedTime;
+let isPaused = true;
+let isFirstTime = true;
 const timerDisplay = document.querySelector("#timer-left");
+const start_stop = document.querySelector("#start_stop");
+const timer_length = document.querySelector("#session-length").innerHTML;
 
 function timer(seconds) {
   const now = Date.now();
@@ -7,9 +13,14 @@ function timer(seconds) {
   displayTimeLeft(seconds);
 
   countdown = setInterval(() => {
-    const secondsLeft = Math.round((then - Date.now()) / 1000);
+    secondsLeft = Math.round((then - Date.now()) / 1000);
     //check if we should stop it
     if (secondsLeft < 0) {
+      clearInterval(countdown);
+      return;
+    }
+    if (isPaused) {
+      savedTime = secondsLeft;
       clearInterval(countdown);
       return;
     }
@@ -25,3 +36,14 @@ function displayTimeLeft(seconds) {
   document.title = display;
   timerDisplay.textContent = display;
 }
+
+start_stop.addEventListener("click", e => {
+  isPaused = !isPaused;
+  console.log(savedTime);
+  if (isFirstTime) {
+    isFirstTime = false;
+    timer(timer_length * 60);
+  } else {
+    timer(savedTime);
+  }
+});
